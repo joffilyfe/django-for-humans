@@ -1,35 +1,38 @@
 # Mini Curso sobre Django
 
-Olá, tudo joia? Esse repositório aborda o passo a passo na criação de um blog utilizando Python e o Django Framework. Vamos aprender juntos?
+Vamos dar continuidade ao nosso curso. Na etapa anterior nós iniciamos o nosso projeto e o chamamos de **meusite** e o Django criou uma estrutura para utilizarmos já com alguns arquivos dentro. 
 
-Precisamos baixar e instalar o Python na versão 3.5 ou superior no site oficial [Python](https://www.python.org/downloads/), logo após isso podemos continuar.
+Atualmente nossa estrutura é como está mostrada logo a baixo. Note que temos duas pastas chamadas de **meusite**, a primeira pasta guarda toda a estrutura do nosso projeto e a segunda pasta guarda alguns arquivos *principais* como o settings.py e o urls.py.
 
-Com o Python instalado nós vamos utilizar uma ferramenta muito importante no desenvolvimento com python, é o Virtualenv. Para um melhor entendimento, o Virtualenv é um meio de isolar as dependências de um projeto específico e isso vai facilitar e muito a nossa vida, no decorrer deste mini curso isso ficará claro!
-
-Vamos criar o nosso ambiente virtual e ativa-lo:
 ```shell
-python3 -m venv env && source env/bin/activate
+meusite
+├── README.md
+├── manage.py
+└── meusite
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+```
+Precisamos entender que o Django trabalha com o conceito de aplicações modulares, dentro de um projeto global nós teremos várias aplicações que podem ou não se comunicarem, o que é o caso do nosso blog. O nosso blog será uma única aplicação dentro de um projeto maior chamado de **meusite**.
+De agora em diante nós vamos trabalhar bastante com o arquivo `manage.py`, por meio dele executaremos vários comandos vitais para sincronizar o banco de dados, coletar arquivos estáticos, gerar super usuários e muitas outras coisas. Vamos então criar nosso **app** chamado de **blog**.
+
+```shell
+python manage.py startapp blog
 ```
 
-Se tudo ocorreu bem, no seu console de comando, deverá aparecer algo como:
+O django criará uma nova pasta chamada de blog com vários outros arquivos dentro, teremos algo como isto:
 ```shell
-(env) $
-```
-
-Isso indica que nosso ambiente virtual está instalado e ativado. Podemos então instalar nossa unica dependência do momento, o Django 1.9.2. Execute o comando abaixo:
-```shell
-pip install django==1.9.2
-```
-
-Fantástico! Agora nós temos o Django instalado em nosso ambiente virtual de desenvolvimento! Não fique intimidado por executar tantos comandos, ao passar do tempo nós ganharemos mais familiaridade com esses comandos.
-
-Tudo perfeito até o momento (wow) mas agora nós precisamos iniciar de fato o nosso desenvolvimento, certo?
-```shell
-django-admin startproject meusite
-```
-Muito simples! Acabamos de criar um novo projeto chamado de **meusite** e temos uma estrutura de pastas e arquivos como mostrado logo abaixo.
-
-```shell
+.meusite
+├── blog
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
 ├── manage.py
 └── meusite
     ├── __init__.py
@@ -38,6 +41,7 @@ Muito simples! Acabamos de criar um novo projeto chamado de **meusite** e temos 
     └── wsgi.py
 ```
 
-Por enquanto é só, até a próxima.
+Ficamos por aqui, até a próxima!
 
-#### 0.0.1
+0.0.2
+
