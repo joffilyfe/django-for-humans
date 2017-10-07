@@ -40,4 +40,5 @@ Muito simples! Acabamos de criar um novo projeto chamado de **meusite** e temos 
 
 Por enquanto é só, até a próxima.
 
-#### 0.0.1
+[Segunda parte](https://github.com/joffilyfe/django-for-humans/tree/0.0.2)
+
